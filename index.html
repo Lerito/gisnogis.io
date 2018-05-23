@@ -125,7 +125,7 @@
                   var areaName = currentArea.name;
                   var koef = population[currentArea.name] / itemCount;
                   var popupContent = "<br>" + areaName +" район </br> <p><br> Население: </br>" + population[currentArea.name] + "</p>" +
-                      "<p><br>Количество объектов: </br>"  + itemCount + "</p>" + "<p><br>Население на ед.объекта: </br>"  + koef + "</p>";
+                      "<p><br>Количество объектов: </br>"  + itemCount + "</p>" + "<p><br>Население на ед.объекта: </br>"  + population[currentArea.name]/itemCount + "</p>";
 
                       currentZone.bindPopup(popupContent).openPopup();
 
