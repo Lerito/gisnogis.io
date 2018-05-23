@@ -3,7 +3,7 @@
     <head>
         <title>2ГИС</title>
         <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
-        <script src="./gisApi.js" type="text/javascript"></script>
+        <script src="./Api2gis.js" type="text/javascript"></script>
         <script type="text/javascript">
         var maxPopulation = 219115;
         var minPopulation = 54783;
@@ -83,7 +83,7 @@
                 var geometry  = areasZones[selectedValue].geometry.selection;
 
                 var polygonObject = DG.Wkt.toLatLngs(geometry)
-                var polyline = DG.polygon(polygonObject, {color:'green', weight:3, opacity:0.7}).addTo(map);
+                var polyline = DG.polygon(polygonObject, {color:'red', weight:3, opacity:0.7}).addTo(map);
                 currentZone = polyline;
                 currentArea = areasZones[selectedValue];
                 onCategoryChanged();
@@ -188,13 +188,9 @@
                <option value="Кафе">Кафе</option>
                <option value="Продовольственные магазины">Продукты</option>
                <option value="Аптека">Аптеки</option>
-               <option value="Гостиница">Гостиницы</option>
-               <option value="Университет">Университеты</option>
-               <option value="Школа">Школы</option>
-               <option value="Больница">Больницы</option>
              </select>
 
             </div>
-        <div id="map" style="width:1024px; height:768px; margin: 4px 0px"></div>
+        <div id="map" style="width:1300px; height:768px; margin: 4px 0px"></div>
     </body>
 </html>
