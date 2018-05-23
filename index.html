@@ -90,9 +90,6 @@
               }
 
               function onCategoryChanged(){
-                // if(currentCategory !== null && currentCategory !== undefined)
-                //     currentCategory.remove();
-
                 var select = document.getElementById("rubric")
                 var selectedValue = select.options[select.selectedIndex].value;
                 currentCategory = selectedValue
@@ -126,8 +123,9 @@
 
               function calculatePopulationRatio(itemCount){
                   var areaName = currentArea.name;
+                  var koef = population[currentArea.name] / itemCount;
                   var popupContent = "<br>" + areaName +" район </br> <p><br> Население: </br>" + population[currentArea.name] + "</p>" +
-                      "<p><br>Найдено по запросу: </br>"  + itemCount + "</p>";
+                      "<p><br>Количество объектов: </br>"  + itemCount + "</p>" + "<p><br>Население на ед.объекта: </br>"  + koef + "</p>";
 
                       currentZone.bindPopup(popupContent).openPopup();
 
@@ -146,6 +144,7 @@
                   var minRatio = minItems / maxPopulation;
                   var difference = maxRatio - minRatio;
                   var newRatio = (ratio - minRatio) / difference;
+                  
 
                   var color = getRatioColor(newRatio);
                   currentZone.setStyle({color:color});
