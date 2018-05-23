@@ -28,6 +28,7 @@
             var currentMarkers = []
             var allCategories = [];
             var currentCategory;
+            var koef;
 
             DG.then(function () {
                 map = DG.map('map', {
@@ -123,7 +124,7 @@
 
               function calculatePopulationRatio(itemCount){
                   var areaName = currentArea.name;
-                  var koef = population[currentArea.name] / itemCount;
+                  
                   var popupContent = "<br>" + areaName +" район </br> <p><br> Население: </br>" + population[currentArea.name] + "</p>" +
                       "<p><br>Количество объектов: </br>"  + itemCount + "</p>" + "<p><br>Население на ед.объекта: </br>"  + koef + "</p>";
 
@@ -131,11 +132,14 @@
 
                   if(itemCount<minItems){
                     minItems = itemCount;
+                    koef = population[currentArea.name] / itemCount;
                   }
 
                   if(itemCount>maxItems){
                     maxItems = itemCount;
+                    koef = population[currentArea.name] / itemCount;
                   }
+                  
 
                   var districtName = currentArea.name;
                   var populationCurrentDistrict = population[districtName];
