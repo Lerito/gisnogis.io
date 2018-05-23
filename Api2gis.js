@@ -1,8 +1,7 @@
 //ключ + ссылка на каталог
 var key = "rutnpt3272"
 var url = `https://catalog.api.2gis.ru/2.0/catalog/branch/search?key=${key}&format=json&region_id=1`
-
-//ссылки на хранилища сущностей
+//хранилища сущностей
 var categoryItemsURL = `https://catalog.api.2gis.ru/2.0/catalog/branch/search?key=${key}&region_id=16&format=json&page_size=50&fields=items.point`
 
 var categoryURL = `https://catalog.api.2gis.ru/2.0/catalog/rubric/list?key=${key}&region_id=16&format=json`
